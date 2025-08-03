@@ -16,8 +16,8 @@ cd /path/Tglabs-homework-assignment
 Install dependencies using npm:
 
 npm install
-Running the API
-To run the API in a local environment:
+Running the Project
+To run the Project in a local environment:
 
 npm run dev
 The server will be available at: http://localhost:4000.
