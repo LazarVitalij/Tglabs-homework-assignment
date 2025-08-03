@@ -1,6 +1,6 @@
 # Doge Bet
 
-This is a Doge Bet betting platform developed React + Vite.
+This is a Doge Bet, a betting platform developed with React + Vite.
 
 # Requirements
 
