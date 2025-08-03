@@ -1,31 +1,42 @@
-#
+# Doge Bet
 
-Description
 This is a Doge Bet betting platform developed React + Vite.
+
+# Requirements
 
 Requirements
 Node.js >= 22.x
-Installation
+
+# Installation
+
 Clone this repository:
 
-git clone
+# git clone
+
 cd Tglabs-homework-assignment
-Navigate to the project directory:
+
+# Navigate to direcory
 
 cd /path/Tglabs-homework-assignment
-Install dependencies using npm:
 
-npm install
-Running the Project
-To run the Project in a local environment:
+# Running the Project
 
-npm run dev
+1: npm install
+
+2: npm run dev
+
 The server will be available at: http://localhost:4000.
 
+# Other scrips
+
 npm run lint
+
 Script for project linting.
 
 npm run format
+
 Script for project formatting.
+
+# Backend
 
 This Project is dependent on MOCK API which you will be able to find: https://github.com/MantasBuga/mock-api.
