@@ -7,10 +7,6 @@ This is a Doge Bet, a betting platform developed with React + Vite.
 Requirements
 Node.js >= 22.x
 
-# Installation
-
-Clone this repository:
-
 # git clone
 
 cd Tglabs-homework-assignment
@@ -19,11 +15,12 @@ cd Tglabs-homework-assignment
 
 cd /path/Tglabs-homework-assignment
 
+# Installation
+ npm install
+
 # Running the Project
 
-1: npm install
-
-2: npm run dev
+ npm run dev
 
 The server will be available at: http://localhost:4000.
 
