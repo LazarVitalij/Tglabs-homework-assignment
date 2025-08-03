@@ -18,11 +18,11 @@ cd /path/Tglabs-homework-assignment
 # Installation
  npm install
 
-# Running the Project
+# Running the project
 
  npm run dev
 
-The server will be available at: http://localhost:4000.
+The project will be available at: http://localhost:4000.
 
 # Other scrips
 
