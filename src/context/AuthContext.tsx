@@ -10,14 +10,12 @@ export const AuthProvider = ({
   children: ReactNode
 }): ReactElement => {
   const [user, setUser] = useState<LoginResponse | null>(null)
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    localStorage.token ? true : false
-  )
   const [token, setToken] = useState<string>(localStorage.token || '')
+  const isAuthenticated = !!token
 
   const logout = (): void => {
-    setIsAuthenticated(false)
     localStorage.clear()
+    setToken('')
     setUser(null)
   }
 
@@ -26,7 +24,7 @@ export const AuthProvider = ({
       value={{
         user,
         isAuthenticated,
-        setIsAuthenticated,
+        setIsAuthenticated: () => {},
         token,
         setToken,
         setUser,

@@ -7,7 +7,7 @@ export const useBalance = (): [() => number, (balance: number) => void] => {
   }
 
   const assignBalance = (balance: number): void => {
-    if (balance) setBalance(balance.toString())
+    setBalance(balance.toString())
   }
 
   return [getBalance, assignBalance]

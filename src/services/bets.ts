@@ -19,7 +19,7 @@ export const placeBet = async (
   return response
 }
 
-export const getBets = async (
+export const getBets = (
   body: UserBetsDetails,
   token: string
 ): Promise<UserBetsResponse> => {
@@ -30,21 +30,12 @@ export const getBets = async (
     ...(body.status && { status: body.status }),
   })
 
-  const response = await fetchGetApi<UserBetsResponse>(
-    `my-bets?${params.toString()}`,
-    token
-  )
-  return response
+  return fetchGetApi<UserBetsResponse>(`my-bets?${params.toString()}`, token)
 }
 
-export const cancelBet = async (
+export const cancelBet = (
   id: string,
   token: string
 ): Promise<CanceledBetResponse> => {
-  const response = await fetchDeleteApi<CanceledBetResponse, null>(
-    `my-bet/${id}`,
-    null,
-    token
-  )
-  return response
+  return fetchDeleteApi<CanceledBetResponse, null>(`my-bet/${id}`, null, token)
 }
