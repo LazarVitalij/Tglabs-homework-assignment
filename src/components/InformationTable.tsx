@@ -160,6 +160,28 @@ const InformationTable = ({
   if (!data || data.length === 0) {
     return (
       <Container style={{ justifyContent: 'flex-start' }} className={className}>
+        {filters.length > 0 && (
+          <FilterWrapper>
+            {filters.map((filter) => (
+              <FilterDropdown key={filter.key}>
+                <label>{filter.label}</label>
+                <select
+                  value={selectedFilters[filter.key]}
+                  onChange={(e) =>
+                    handleFilterChange(filter.key, e.target.value)
+                  }
+                >
+                  <option value="">All</option>
+                  {filter.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </FilterDropdown>
+            ))}
+          </FilterWrapper>
+        )}
         <Title>{title}</Title>
         <HeaderRow>
           {columns.map((column) => (

@@ -6,22 +6,15 @@ import {
   RegistrationResponse,
 } from '@/types/auth'
 
-export const loginUser = async (
-  body: LoginCredentials
-): Promise<LoginResponse> => {
-  const response = await fetchPostApi<LoginResponse, LoginCredentials>(
-    'login',
-    body
-  )
-  return response
+export const loginUser = (body: LoginCredentials): Promise<LoginResponse> => {
+  return fetchPostApi<LoginResponse, LoginCredentials>('login', body)
 }
 
-export const registerUser = async (
+export const registerUser = (
   body: RegistrationDetails
 ): Promise<RegistrationResponse> => {
-  const response = await fetchPostApi<
-    RegistrationResponse,
-    RegistrationDetails
-  >('register', body)
-  return response
+  return fetchPostApi<RegistrationResponse, RegistrationDetails>(
+    'register',
+    body
+  )
 }

@@ -36,6 +36,7 @@ const Wallet = (): ReactElement => {
     type: '',
   })
   const handleFilterChange = (key: string, value: string): void => {
+    handlePaginationChange(1)
     setFiltersState((prev) => ({ ...prev, [key]: value }))
   }
 

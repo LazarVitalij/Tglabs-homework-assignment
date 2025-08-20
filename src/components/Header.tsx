@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTheme } from '@/context/ThemeContext'
 import { useAuth } from '@/context/AuthContext'
@@ -52,16 +52,19 @@ const Header = (): ReactElement => {
   const [getBalance] = useBalance()
   const { logout } = useAuth()
   const { toggleTheme } = useTheme()
-  const navigate = useNavigate()
 
   return (
     <Container>
       <Separation style={{ marginLeft: 10 }}>
-        <NavigationButton onClick={() => navigate('/')}>
-          <NavigationLogo src={Home} />
+        <NavigationButton>
+          <Link to="/">
+            <NavigationLogo src={Home} />
+          </Link>
         </NavigationButton>
-        <NavigationButton onClick={() => navigate('/wallet')}>
-          <NavigationLogo src={Wallet} />
+        <NavigationButton>
+          <Link to="/wallet">
+            <NavigationLogo src={Wallet} />
+          </Link>
         </NavigationButton>
         <NavigationButton onClick={() => toggleTheme()}>
           <NavigationLogo src={Theme} />

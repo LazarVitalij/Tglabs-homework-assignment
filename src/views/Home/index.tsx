@@ -52,6 +52,7 @@ const Home = (): ReactElement => {
   })
 
   const handleFilterChange = (key: string, value: string): void => {
+    handlePaginationChange(1)
     setFiltersState((prev) => ({ ...prev, [key]: value }))
   }
 
@@ -88,7 +89,6 @@ const Home = (): ReactElement => {
   const handlePlaceBet = async (amount: number): Promise<void> => {
     const response = await placeBet({ amount: amount }, token)
     fetchBets()
-
     assignBalance(response?.balance)
   }
 

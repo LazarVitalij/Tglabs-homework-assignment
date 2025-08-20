@@ -1,7 +1,7 @@
 import { fetchGetApi } from '@/helpers/fetchers'
 import { TransactionsDetails, TransactionsResponse } from '@/types/transactions'
 
-export const getTransactions = async (
+export const getTransactions = (
   body: TransactionsDetails,
   token: string
 ): Promise<TransactionsResponse> => {
@@ -11,9 +11,8 @@ export const getTransactions = async (
     ...(body.id && { id: body.id }),
     ...(body.type && { type: body.type }),
   })
-  const response = await fetchGetApi<TransactionsResponse>(
+  return fetchGetApi<TransactionsResponse>(
     `my-transactions?${params.toString()}`,
     token
   )
-  return response
 }

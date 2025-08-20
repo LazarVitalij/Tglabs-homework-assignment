@@ -133,7 +133,7 @@ const PlaceBet = ({
     if (amount > balance) return
     setIsSubmitting(true)
     try {
-      await onPlaceBet(Number(amount.toFixed(2)))
+      await onPlaceBet(parseInt(amount.toFixed(2), 10))
       setAmount(minAmount)
       setError(null)
     } catch (e) {
@@ -159,7 +159,7 @@ const PlaceBet = ({
           value={amount.toFixed(2)}
           min={minAmount}
           max={maxAmount}
-          onChange={(e) => handleAmountChange(Number(e.target.value))}
+          onChange={(e) => handleAmountChange(parseInt(e.target.value, 10))}
         />
         <AmountControls>
           <AmountButton

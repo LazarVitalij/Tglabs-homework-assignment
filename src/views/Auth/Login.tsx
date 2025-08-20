@@ -35,7 +35,7 @@ const StyledForm = styled.form`
 `
 
 const Login = (): ReactElement => {
-  const { setUser, setToken, setIsAuthenticated } = useAuth()
+  const { setUser, setToken } = useAuth()
   const [error, setError] = useState<string | null>(null)
   const [errors, setErrors] = useState<Form>()
   //  I'm leaving this user for easy registration and login.
@@ -50,12 +50,10 @@ const Login = (): ReactElement => {
       setUser(response)
       setToken(response.accessToken)
       localStorage.setItem('token', response.accessToken)
-      setIsAuthenticated(true)
       setError(null)
     } catch (e) {
       handleError(e, setError)
       localStorage.clear()
-      setIsAuthenticated(false)
     }
   }
 
